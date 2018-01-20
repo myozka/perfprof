@@ -65,17 +65,17 @@ plt.hold('on')
 plt.plot(range(20), alg2times, markerspecs[1])
 plt.legend(labels, loc=0, fontsize=14)
 plt.hold('off')
-plt.savefig(r'fig/timings.png')
+plt.savefig(r'timings.png')
 plt.tick_params(labelsize=14)
 plt.ylim((8.5, 12.8))
 
 data = np.vstack((alg1times, alg2times)).T
 perfprof(data, linespecs=linespecs, legendnames=labels, usetex=True)
-plt.savefig(r'fig/timings_pp.png')
+plt.savefig(r'timings_pp.png')
 ```
 
-![Scatter plot of timings](fig/timings.png?raw=true "Scatter Plot")
-![Performance profile of timings](fig/timings_pp.png?raw=true "Performance Profile")
+![Scatter plot of timings](timings.png?raw=true "Scatter Plot")
+![Performance profile of timings](timings_pp.png?raw=true "Performance Profile")
 
 From the scatter plot alone it would be difficult to see which algorithm is best overall.
 Looking at the performance profile we can clearly see that **alg2** was fastest on around 55% of the test cases
@@ -105,18 +105,18 @@ plt.semilogy(range(100), rerr1, 'r^')
 plt.semilogy(range(100), rerr2, 'bo')
 plt.legend(['cond u', 'alg1', 'alg2'], loc=0, fontsize=14)
 plt.tick_params(labelsize=14)
-plt.savefig(r'fig/relerr.png')
+plt.savefig(r'relerr.png')
 
 labels = ['alg1', 'alg2']
 linespecs = ['r-', 'b-']
 data = np.vstack((rerr1, rerr2)).T
 perfprof(data, linespecs=linespecs, legendnames=labels, thmax=10, usetex=True)
 plt.ylim((0.6, 1))
-plt.savefig(r'fig/relerr_pp.png')
+plt.savefig(r'relerr_pp.png')
 ```
 
-![Scatter plot of timings](fig/relerr.png?raw=true "Scatter Plot")
-![Performance profile of timings](fig/relerr_pp.png?raw=true "Performance Profile")
+![Scatter plot of timings](relerr.png?raw=true "Scatter Plot")
+![Performance profile of timings](relerr_pp.png?raw=true "Performance Profile")
 
 We can see from the scatter plot that **alg1** is generally better but it is harder to see
 how far behind **alg2** is.
